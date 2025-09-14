@@ -35,6 +35,17 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+# DESIGN & RULES
+
+## FIGMA
+
+https://www.figma.com/design/KAhGfyTcgBE6lIoOwiAh7h/Untitled?node-id=11-2&t=OqPWE8VVPFOZV3kg-1
+
+## RULES
+
+Branch rules:
+- branch name -> <user_firstname>/case-info
+
 ## How To define mail & username
 - git config --global user.name "username"
 - git config --global user.email "email"
