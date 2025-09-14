@@ -46,3 +46,6 @@ https://www.figma.com/design/KAhGfyTcgBE6lIoOwiAh7h/Untitled?node-id=11-2&t=OqPW
 Branch rules:
 - branch name -> <user_firstname>/case-info
 
+## How To define mail & username
+- git config --global user.name "username"
+- git config --global user.email "email"
