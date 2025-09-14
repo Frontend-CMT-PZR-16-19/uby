@@ -14,29 +14,14 @@ export default function Home() {
               }}
             ></div>
             
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent"></div>
-            
-            <div className="absolute top-6 left-6 w-6 h-6 border-l-2 border-t-2 border-white/30 animate-fade-in"></div>
-            <div className="absolute top-6 right-6 w-6 h-6 border-r-2 border-t-2 border-white/30 animate-fade-in-delayed"></div>
-            <div className="absolute bottom-6 left-6 w-6 h-6 border-l-2 border-b-2 border-white/30 animate-fade-in-slow"></div>
-            <div className="absolute bottom-6 right-6 w-6 h-6 border-r-2 border-b-2 border-white/30 animate-fade-in-slower"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
             
             <div className="relative z-10 h-full flex items-center">
-              <div className="w-full max-w-3xl px-12">
-                <div className="space-y-8">
-                  <div className="inline-flex items-center px-6 py-3 bg-white/15 backdrop-blur-sm rounded-full border border-white/25 animate-slide-in-up hover:bg-white/20 transition-all duration-500">
-                    <span className="text-white text-sm font-semibold tracking-wide uppercase">Geleceğin İnşası</span>
-                  </div>
-                  
-                  <h1 className="text-white text-6xl md:text-7xl font-bold leading-tight drop-shadow-2xl animate-slide-in-up-delayed hover:scale-[1.02] transition-transform duration-700">
-                    Üçüncü Binyıl
+              <div className="w-full px-8">
+                <div className="max-w-md ml-12">
+                  <h1 className="text-white text-3xl md:text-4xl font-bold leading-tight drop-shadow-2xl">
+                    Üçüncü Binyıl - Geleceğini inşa etmen için seni bekliyor
                   </h1>
-                  
-                  <p className="text-white/95 text-2xl md:text-3xl leading-relaxed drop-shadow-lg max-w-2xl font-light animate-slide-in-up-slow hover:text-white transition-colors duration-500">
-                    Geleceğini inşa etmen için seni bekliyor
-                  </p>
-                  
-                  <div className="w-32 h-1 bg-gradient-to-r from-white to-white/60 rounded-full animate-expand-width"></div>
                 </div>
               </div>
             </div>
