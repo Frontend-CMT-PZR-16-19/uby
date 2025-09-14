@@ -177,6 +177,7 @@ export default function Home() {
           animation-fill-mode: both;
         }
       `}</style>
+
     </div>
   );
 }
