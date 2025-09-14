@@ -4,9 +4,9 @@
 export default function Home() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="relative w-full px-6 py-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative w-full h-screen overflow-hidden rounded-[2rem] shadow-xl group">
+      <div className="relative w-full">
+        <div className="w-full">
+          <div className="relative w-full h-screen overflow-hidden shadow-xl group">
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[30s] ease-out group-hover:scale-105"
               style={{
