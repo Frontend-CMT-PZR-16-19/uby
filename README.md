@@ -44,4 +44,5 @@ https://www.figma.com/design/KAhGfyTcgBE6lIoOwiAh7h/Untitled?node-id=11-2&t=OqPW
 ## RULES
 
 Branch rules:
-- branch name -> <user_firstname>/<case-info>
+- branch name -> <user_firstname>/case-info
+
