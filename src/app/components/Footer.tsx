@@ -1,10 +1,20 @@
 import Link from "next/link";
+import { title } from "process";
 
 type Education = {
     title: string;
     href: string
 }
 
+type Campus = {
+    title: string;
+    address: string;
+}
+
+type Links = {
+    title: string;
+    href: string
+}
 export default function Footer() {
 
 
@@ -47,6 +57,44 @@ export default function Footer() {
         },
     ]
 
+    const navbarCampuses: Campus[] = [
+        {
+            title: "MECİDİYEKÖY ŞUBE",
+            address: " Eski Osmanlı Sokak No:40 Kat:5 Mecidiyeköy/İstanbul",
+        },
+        {
+            title: "KADIKÖY ŞUBE",
+            address: " Caferağa Mah. Mühürdar Caddesi No:50 Kadıköy / İstanbul",
+        }
+    ]
+
+    const navbarLinks: Links[] = [
+        {
+            title: "Anasayfa",
+            href: "/",
+        },
+        {
+            title: "Eğitimlerimiz",
+            href: "/egitimlerimiz",
+        },
+        {
+            title: "Etkinlikler",
+            href: "/etkinlikler"
+        },
+        {
+            title: "Kampanyalar",
+            href: "/kampanyalar"
+        },
+        {
+            title:"İletişim",
+            href: "/iletisim"
+        },
+        {
+            title:"Blog",
+            href: "/blog"
+        }
+
+    ]
 
     return (
         <div className="bg-gray-800 py-4 m-0">
@@ -92,11 +140,25 @@ export default function Footer() {
                             <h2 className="text-white uppercase">
                                 Kampüslerimiz
                             </h2>
+                            <ul className="">
+                                {navbarCampuses.map((campuses: Campus, index: number) => (
+                                    <li key={index} className="text-gray-400 hover:text-gray-200 transition">
+                                        <Link href={campuses.address} >{campuses.title}</Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                         <div className="pl-4 pb-4 border-l border-white/10 h-fit">
                             <h2 className="text-white uppercase ">
                                 Hızlı Menü
                             </h2>
+                            <ul>
+                                {navbarLinks.map((links: Links, index: number) => (
+                                    <li key={index} className="text-gray-400 hover:text-gray-200 transition">
+                                        <Link href={links.href} >{links.title}</Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 </div>
