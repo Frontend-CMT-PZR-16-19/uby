@@ -17,6 +17,8 @@ type Links = {
 }
 export default function Footer() {
 
+    const phone = "444 3 111";
+    const email = "bilgi@ucuncubinyil.com";
 
     const navbarEducations: Education[] = [
         {
@@ -59,11 +61,11 @@ export default function Footer() {
 
     const navbarCampuses: Campus[] = [
         {
-            title: "MECİDİYEKÖY ŞUBE",
+            title: "Mecidiyeköy",
             address: " Eski Osmanlı Sokak No:40 Kat:5 Mecidiyeköy/İstanbul",
         },
         {
-            title: "KADIKÖY ŞUBE",
+            title: "Kadıköy",
             address: " Caferağa Mah. Mühürdar Caddesi No:50 Kadıköy / İstanbul",
         }
     ]
@@ -86,18 +88,18 @@ export default function Footer() {
             href: "/kampanyalar"
         },
         {
-            title:"İletişim",
+            title: "İletişim",
             href: "/iletisim"
         },
         {
-            title:"Blog",
+            title: "Blog",
             href: "/blog"
         }
 
     ]
 
     return (
-        <div className="bg-gray-800 py-4 m-0">
+        <div className="bg-gray-800 p-4 m-0">
             <div className="container mx-auto">
                 <div className="flex items-center gap-4 pb-10">
                     <p className="text-white font-sans text-2xl m-0">Connect with us:</p>
@@ -134,6 +136,7 @@ export default function Footer() {
                                         <Link href={education.href} >{education.title}</Link>
                                     </li>
                                 ))}
+
                             </ul>
                         </div>
                         <div className="pl-4 pb-4 border-l border-white/10 h-fit">
@@ -142,10 +145,17 @@ export default function Footer() {
                             </h2>
                             <ul className="">
                                 {navbarCampuses.map((campuses: Campus, index: number) => (
-                                    <li key={index} className="text-gray-400 hover:text-gray-200 transition">
-                                        <Link href={campuses.address} >{campuses.title}</Link>
+                                    <li key={index} className="text-gray-400 hover:text-gray-200 transition max-w-sm">
+                                        <p className="text-gray-400">{campuses.title}: {campuses.address}</p>
                                     </li>
                                 ))}
+                                <li className="text-gray-400">
+                                    {phone}
+                                </li>
+                                <li className="text-gray-400">
+                                    {email}
+                                </li>
+
                             </ul>
                         </div>
                         <div className="pl-4 pb-4 border-l border-white/10 h-fit">
@@ -162,8 +172,8 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                
-                <p className="text-white font-sans text-sm text-center">© 2025 ÜçüncüBinyıl Akademi. Tüm hakları saklıdır.</p>
+
+                <p className="text-gray-400 font-sans text-sm text-center">© 2025 ÜçüncüBinyıl Akademi. Tüm hakları saklıdır.</p>
             </div>
         </div>
     );
