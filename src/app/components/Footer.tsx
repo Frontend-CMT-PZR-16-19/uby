@@ -1,5 +1,6 @@
+"use client"
+
 import Link from "next/link";
-import Image from "next/image";
 
 type Education = {
     title: string;
@@ -15,6 +16,7 @@ type Links = {
     title: string;
     href: string
 }
+
 export default function Footer() {
 
     const phone = "444 3 111";
@@ -102,16 +104,6 @@ export default function Footer() {
     return (
         <div className="relative m-0 bg-gradient-to-b from-slate-800 via-slate-850 to-slate-900 p-6 sm:p-8">
             <div className="container mx-auto max-w-7xl">
-                {/* Brand */}
-                <div className="grid grid-cols-1 gap-8 pb-8 place-items-center">
-                    <div className="flex items-center gap-4">
-                       
-                        <div className="text-center">
-                            <h3 className="text-white/90 text-lg font-semibold m-0">ÜçüncüBinyıl Akademi</h3>
-                            <p className="text-gray-400 mt-1 max-w-xl">Geleceğin mesleklerine odaklı, uygulamalı eğitimler ve sektör odaklı projelerle kariyerine hız kat.</p>
-                        </div>
-                    </div>
-                </div>
                 <div className="flex flex-wrap items-center gap-4 pb-10">
                     <p className="text-white/90 font-sans text-xl sm:text-2xl m-0 tracking-wide">Connect with us:</p>
                     <div className="flex flex-wrap gap-3">
@@ -135,7 +127,7 @@ export default function Footer() {
                         </a>
                     </div>
                 </div>
-                <div className="border-y border-white/10 py-6 mb-6">
+                <div className="border-y border-slate-500/10 py-6 mb-6">
                     <div className="py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div className="border-l pl-5 border-white/10">
                             <h2 className="text-white/90 uppercase tracking-wider text-sm mb-3">
@@ -150,7 +142,7 @@ export default function Footer() {
 
                             </ul>
                         </div>
-                        <div className="pl-5 pb-2 border-l border-white/10 h-fit">
+                        <div className="pl-5 pb-2 border-l border-slate-500/10 h-fit">
                             <h2 className="text-white/90 uppercase tracking-wider text-sm mb-3">
                                 Kampüslerimiz
                             </h2>
@@ -169,7 +161,7 @@ export default function Footer() {
 
                             </ul>
                         </div>
-                        <div className="pl-5 pb-2 border-l border-white/10 h-fit">
+                        <div className="pl-5 pb-2 border-l border-slate-500/10 h-fit">
                             <h2 className="text-white/90 uppercase tracking-wider text-sm mb-3 ">
                                 Hızlı Menü
                             </h2>
@@ -190,9 +182,9 @@ export default function Footer() {
                         <Link href="#" className="text-gray-400 hover:text-gray-100 text-xs sm:text-sm">Gizlilik</Link>
                         <Link href="#" className="text-gray-400 hover:text-gray-100 text-xs sm:text-sm">KVKK</Link>
                         <Link href="#" className="text-gray-400 hover:text-gray-100 text-xs sm:text-sm">Kullanım Koşulları</Link>
-                        <a href="#top" className="inline-flex items-center gap-2 rounded-full bg-white/5 ring-1 ring-white/10 px-3 py-1.5 text-gray-200 hover:bg-white/10 text-xs">
+                        <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="inline-flex items-center gap-2 rounded-full bg-white/5 ring-1 ring-white/10 px-3 py-1.5 text-gray-200 hover:bg-white/10 text-xs">
                             Yukarı Çık
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
