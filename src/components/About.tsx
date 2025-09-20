@@ -3,7 +3,7 @@
 export default function About() {
   return (
      <section className=" relative py-20 bg-oklch-50/10  dark:bg-oklch-900/50">
-        <div className="container mx-auto max-w-7xl px-6 grid grid-cols-2 gap-10 items-center">
+        <div className="container mx-auto grid grid-cols-2 gap-10 items-center">
             <div className="relative w-full h-[300px] md:h-[400px] lg:h[300px] overflow-hidden rounded-2xl shadow-lg">
                 <video 
                 src="/Neden-Ucuncu-Binyil-Akademi-_.mp4"
