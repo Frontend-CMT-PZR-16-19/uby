@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link";
+import { Logo } from "../../public/logo";
 
 type Education = {
     title: string;
@@ -102,8 +103,8 @@ export default function Footer() {
     ]
 
     return (
-        <div className="relative m-0 bg-gradient-to-b from-slate-800 via-slate-850 to-slate-900 p-6 sm:p-8">
-            <div className="container mx-auto max-w-7xl">
+        <div className="relative m-0 bg-gradient-to-tr from-bacground via-background/50 to-primary/10 p-6 sm:p-8">
+            <div className="container mx-auto">
                 <div className="flex flex-wrap items-center gap-4 pb-10">
                     <p className="text-white/90 font-sans text-xl sm:text-2xl m-0 tracking-wide">Connect with us:</p>
                     <div className="flex flex-wrap gap-3">
@@ -128,7 +129,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="border-y border-slate-500/10 py-6 mb-6">
-                    <div className="py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div className="border-l pl-5 border-white/10">
                             <h2 className="text-white/90 uppercase tracking-wider text-sm mb-3">
                                 Eğitimlerimiz
@@ -172,6 +173,9 @@ export default function Footer() {
                                     </li>
                                 ))}
                             </ul>
+                        </div>
+                        <div className="h-fit items-center justify-center flex mt-10 ">
+                            <Logo fontSize={160} />
                         </div>
                     </div>
                 </div>
