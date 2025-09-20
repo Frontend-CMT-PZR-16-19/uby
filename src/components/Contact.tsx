@@ -84,7 +84,7 @@ export const Contact = () => {
 
   return (
     <section className="bg-muted">
-      <div className="w-full">
+      <div className="container mx-auto">
 
           <div className="grid md:grid-cols-2 gap-0">
             <div className="p-12 bg-secondary">
@@ -210,7 +210,7 @@ export const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gray-900 text-white py-4 px-8 text-lg font-medium hover:bg-gray-800 transition-colors duration-200"
+                  className="w-full bg-gray-900 text-white py-4 px-8 text-lg font-medium hover:bg-gray-800 transition-colors duration-200 cursor-pointer"
                 >
                   Gönder
                 </button>
