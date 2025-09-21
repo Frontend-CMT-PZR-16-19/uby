@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Logo } from '../../public/logo';
 
 export default function Navbar() {
-  const educationItems = [ //footerdan kopyalandı
+  const educationItems = [
     { title: "Makina", href: "/makina" },
     { title: "Yazılım", href: "/yazilim" },
     { title: "İnşaat", href: "/insaat" },
@@ -14,7 +14,7 @@ export default function Navbar() {
     { title: "Dijital Oyun ve Animasyon", href: "/oyunveanimasyon" },
   ];
 
-  const navItems = [ //footerdan kopyalandı
+  const navItems = [
     { title: 'Etkinlikler', href: '/etkinlikler' },
     { title: 'Kampanyalar', href: '/kampanyalar' },
     { title: 'İletişim', href: '/iletisim' },
