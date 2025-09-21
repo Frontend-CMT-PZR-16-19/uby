@@ -47,7 +47,6 @@ export const Contact = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      console.log('Form başarıyla gönderildi:', { ...formData, recaptchaToken });
       setIsSubmitted(true);
       
       setTimeout(() => {

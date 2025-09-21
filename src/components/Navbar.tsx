@@ -17,6 +17,7 @@ type NavLink = {
 
 export default function Navbar() {
 
+
   const NavLinks: NavLink[] = [
     {
       title: 'Eğitimler',
