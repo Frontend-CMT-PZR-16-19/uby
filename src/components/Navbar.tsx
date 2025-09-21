@@ -70,8 +70,8 @@ export default function Navbar() {
           </div>
           <div className="flex">
             {NavLinks.map((item, idx) => (
-              <div className="hidden lg:flex items-center space-x-8 font-semibold">
-                <div key={idx} className="relative group">
+              <div key={idx} className="hidden lg:flex items-center space-x-8 font-semibold">
+                <div className="relative group">
                   <Link href={item.href} className={`text-gray-300 py-1 ml-4 transition-colors flex items-center gap-2 border-b-2 border-transparent  ${item.subContent ? "hover:bg-foreground hover:text-white" : "hover:border-foreground"}`}>
                     {item.title}
                     {item.subContent && <svg className="w-4 h-4 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
