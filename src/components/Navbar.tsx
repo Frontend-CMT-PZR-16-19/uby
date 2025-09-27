@@ -59,7 +59,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-gradient-to-l from-background via-background/50 to-primary/10 border-gray-700">
+    <nav className="bg-background bg-gradient-to-l from-background via-background/50 to-primary/10 border-gray-700">
       <div className="container mx-auto">
         <div className="flex justify-between items-center h-20">
 

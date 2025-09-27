@@ -103,7 +103,7 @@ export default function Footer() {
     ]
 
     return (
-        <div className="relative m-0 bg-gradient-to-tr from-bacground via-background/50 to-primary/10 p-6 sm:p-8">
+        <div className="relative m-0 bg-gradient-to-tr from-bacground via-background/50 to-primary/10 p-6 sm:p-8 bg-background">
             <div className="container mx-auto">
                 <div className="flex flex-wrap items-center gap-4 pb-10">
                     <p className="text-white/90 font-sans text-xl sm:text-2xl m-0 tracking-wide">Connect with us:</p>
