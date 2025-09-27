@@ -81,13 +81,14 @@ export default function Navbar() {
                   </Link>
 
                   {item.subContent && (
-                    <div className="absolute top-full left-0 w-64 bg-[#007aff] opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-2 group-hover:translate-y-0 z-50">
+                    <div className="absolute top-full left-0 w-64 bg-background opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-2 group-hover:translate-y-0 z-50">
+
                       
                         {item.subContent?.map((subItem, index) => (
                           <Link
                             key={index}
                             href={subItem.href}
-                            className="block px-4 py-2 text-base text-white hover:text-white hover:bg-background text-gray-700"
+                            className="block px-4 py-2 text-base  hover:text-white hover:bg-background text-gray-500"
                           >
                             {subItem.title}
                           </Link>
