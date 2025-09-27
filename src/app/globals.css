@@ -1,17 +1,4 @@
-/* Navbar özel underline hover efekti */
-.custom-underline {
-  position: relative;
-}
-.custom-underline:hover::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2px;
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @tailwind utilities;
@@ -61,7 +48,7 @@
 :root {
   --radius: 0.75rem;
   --background: oklch(0.15 0.05 240);
-  --foreground: oklch(0.95 0.01 240);
+  --foreground: oklch(0.5575 0.2043 258.63);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.95 0.01 240);
   --popover: oklch(1 0 0);

@@ -82,6 +82,7 @@ export default function Navbar() {
 
                   {item.subContent && (
                     <div className="absolute top-full left-0 w-64 bg-background opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-2 group-hover:translate-y-0 z-50">
+
                       
                         {item.subContent?.map((subItem, index) => (
                           <Link
