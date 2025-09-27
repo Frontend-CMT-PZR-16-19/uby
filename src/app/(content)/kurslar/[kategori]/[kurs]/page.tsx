@@ -76,7 +76,7 @@ export default async function KursDetayPage({ params }: PageProps) {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+          <div className="bg-white overflow-hidden">
             {course.image?.asset?.url && (
               <div className="aspect-video w-full">
                 <Image
@@ -89,7 +89,7 @@ export default async function KursDetayPage({ params }: PageProps) {
               </div>
             )}
             
-            <div className="p-8">
+            <div className="py-8">
               <div className="mb-4">
                 <span className="text-sm text-gray-600 font-medium">
                   {course.category.title}

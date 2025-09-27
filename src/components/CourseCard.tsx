@@ -47,7 +47,7 @@ export default function CourseCard({ course }: CourseCardProps) {
       href={`/kurslar/${course.category.slug.current}/${course.slug.current}`}
       className="block group"
     >
-      <article className="bg-white dark:bg-gray-900 overflow-hidden">
+      <article className="bg-white overflow-hidden">
         {/* Ana Görsel Alan */}
         <div className="relative h-64 overflow-hidden">
           {course.image?.asset?.url ? (
@@ -58,7 +58,7 @@ export default function CourseCard({ course }: CourseCardProps) {
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           ) : (
-            <div className="w-full h-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+            <div className="w-full h-full bg-gray-100 flex items-center justify-center">
               <BookOpen className="w-16 h-16 text-gray-400" />
             </div>
           )}
@@ -67,19 +67,19 @@ export default function CourseCard({ course }: CourseCardProps) {
         {/* İçerik Alanı */}
         <div className="pt-3 pb-6">
           {/* Başlık */}
-          <h3 className="text-lg font-bold text-black dark:text-white mb-2 line-clamp-2 leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+          <h3 className="text-lg font-bold text-black mb-2 line-clamp-2 leading-snug group-hover:text-blue-600 transition-colors duration-300">
             {course.title}
           </h3>
           
           {/* Açıklama */}
           {course.description && (
-            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed font-light">
+            <p className="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed font-light">
               {course.description}
             </p>
           )}
 
           {/* Meta Bilgiler */}
-          <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+          <div className="flex items-center gap-4 text-xs text-gray-500 ">
             {course.instructor && (
               <div className="flex items-center gap-1">
                 <Users className="w-4 h-4" />

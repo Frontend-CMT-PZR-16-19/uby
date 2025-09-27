@@ -24,7 +24,7 @@ export default function Navbar() {
       href: '/kurslar',
       subContent: [
         { title: "Makina", href: "/makina" },
-        { title: "Yazılım", href: "/yazilim" },
+        { title: "Yazılım", href: "/kurslar/yazilim-egitimleri" },
         { title: "İnşaat", href: "/insaat" },
         { title: "Mimari", href: "/mimari" },
         { title: "Robotik Otomasyon ve PLC", href: "/robotik" },

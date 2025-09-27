@@ -48,12 +48,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                                         <BreadcrumbItem>
                                             {isLast ? (
                                                 // Son segment - tıklanamaz
-                                                <BreadcrumbPage className="text-gray-500">
+                                                <BreadcrumbPage className="text-gray-500 capitalize">
                                                     {segment.replace(/-/g, ' ')}
                                                 </BreadcrumbPage>
                                             ) : (
                                                 // Diğer segmentler - tıklanabilir
-                                                <BreadcrumbLink asChild>
+                                                <BreadcrumbLink asChild className="capitalize">
                                                     <Link href={href}>
                                                         {segment.replace(/-/g, ' ')}
                                                     </Link>
