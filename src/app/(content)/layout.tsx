@@ -27,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             
             {/* Ana sayfada breadcrumb gösterme */}
             {!isHome && (
-                <div className=" container mx-auto px-4 py-2">
+                <div className="container mx-auto px-4 py-6">
                     <Breadcrumb>
                         <BreadcrumbList>
                             {/* Ana Sayfa */}

@@ -25,7 +25,6 @@ export const courseType = defineType({
       name: 'description',
       title: 'Kısa Açıklama',
       type: 'text',
-      rows: 3,
     }),
     defineField({
       name: 'content',
