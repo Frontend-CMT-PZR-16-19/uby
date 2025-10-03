@@ -79,7 +79,7 @@ export default function Page() {
                                             alt={campaign.title} 
                                             width={600}
                                             height={400}
-                                            className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-sm"
+                                            className="w-full h-64 lg:h-80 object-cover  shadow-sm"
                                             sizes="(max-width: 768px) 100vw, 50vw"
                                             onError={(e) => {
                                                 e.currentTarget.src = "/default-campaign.jpg";
