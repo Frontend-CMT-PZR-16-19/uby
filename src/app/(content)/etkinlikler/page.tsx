@@ -57,16 +57,35 @@ const formatHour = (dateTime: string) => {
 
 export default function EtkinliklerPage() {
   const [events, setEvents] = useState<EventCard[]>([]);
+  const [loading, setLoading] = useState(true); // Loading state ekledim
 
   const getEvents = async () => {
-    const response = await fetch("/api/event");
-    const data = await response.json();
-    setEvents(data?.data || []);
+    try {
+      const response = await fetch("/api/event");
+      const data = await response.json();
+      setEvents(data?.data || []);
+    } catch (error) {
+      console.error("Etkinlikler yüklenirken hata:", error);
+    } finally {
+      setLoading(false); // Yükleme tamamlandı
+    }
   };
 
   useEffect(() => {
     getEvents();
   }, []);
+
+  // Loading durumunda gösterilecek ekran
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <div className="text-lg text-gray-600">Etkinlikler yükleniyor...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -81,8 +100,7 @@ export default function EtkinliklerPage() {
               ? event.image
               : event.image?.asset?.url || "/default.jpg";
             
-            
-            const shortDescription = truncateDescription(event.description, 150); //descriptionu burada kısalttım geri kalanınınıı detayuda gösterdim
+            const shortDescription = truncateDescription(event.description, 150);
             
             return (
               <div key={event._id}>
