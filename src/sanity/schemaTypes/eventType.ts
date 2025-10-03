@@ -40,7 +40,6 @@ export const eventType = defineType({
             options: {
                 dateFormat: 'YYYY-MM-DD',
                 timeFormat: 'HH:mm',
-                calendarTodayLabel: 'Today'
             }
         }),
         defineField({
@@ -50,7 +49,6 @@ export const eventType = defineType({
             options: {
                 dateFormat: 'YYYY-MM-DD',
                 timeFormat: 'HH:mm',
-                calendarTodayLabel: 'Today'
             }
         }),
         defineField({
