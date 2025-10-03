@@ -8,7 +8,10 @@ export const getAllEvents = async () => {
         "slug": slug.current,
         description,
         startDateTime,
-        endDateTime
+        endDateTime,
+        location,
+        category,
+        "image": image.asset->url
       }`
 
     const response = client.fetch(query);

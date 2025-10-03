@@ -87,7 +87,6 @@ export default function EtkinliklerPage() {
                         <div className="flex-1">
                           <div
                             className="flex items-center gap-2 mb-3"
-                            style={{ transform: `rotate(${generateRandomDegree()}deg)` }}
                           >
                             {event.category && (
                               <span className="px-3 bg-blue-100 text-blue-700 text-sm font-medium">
