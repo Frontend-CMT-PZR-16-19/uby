@@ -89,9 +89,6 @@ export default function Page() {
                                     <div className="lg:w-1/2 text-center lg:text-left">
                                         <h2 className="text-3xl font-bold text-gray-600 mb-6">{campaign.title}</h2>
                                         <p className="text-gray-700 text-lg leading-relaxed">{campaign.description}</p>
-                                        <button className="mt-6 bg-background hover:bg-background/50 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 cursor-pointer">
-                                            Detayları Gör
-                                        </button>
                                     </div>
                                 </div>
                             </div>
