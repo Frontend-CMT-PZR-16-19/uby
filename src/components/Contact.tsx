@@ -82,34 +82,45 @@ export const Contact = () => {
   };
 
   return (
-    <section className="bg-muted">
+    <section className="bg-gray-900 text-white">
       <div className="container mx-auto">
-
           <div className="grid md:grid-cols-2 gap-0">
-            <div className="p-12 bg-secondary">
+            <div className="p-12 lg:p-20 bg-gray-800">
+              <div className="mb-12">
+                <div className="text-sm tracking-[0.3em] uppercase text-white/60 mb-4">İletişim</div>
+                <h2 className="text-5xl md:text-6xl font-light mb-12">
+                  Bizimle<br />
+                  <span className="font-bold italic">İletişime Geçin</span>
+                </h2>
+              </div>
+              
               <div className="space-y-8">
-                <div>
-                  <p className="text-lg font-bold text-gray-900 mb-1">E-posta</p>
-                  <p className="text-gray-700">bilgi@ucuncubinyil.com</p>
+                <div className="border-b border-white/20 pb-6">
+                  <div className="text-sm tracking-wider uppercase text-white/60 mb-2">E-posta</div>
+                  <a href="mailto:bilgi@ucuncubinyil.com" className="text-2xl font-light hover:text-white/80 transition-colors">
+                    bilgi@ucuncubinyil.com
+                  </a>
                 </div>
                 
-                <div>
-                  <p className="text-lg font-bold text-gray-900 mb-1">Telefon</p>
-                  <p className="text-gray-700">444 3 111</p>
+                <div className="border-b border-white/20 pb-6">
+                  <div className="text-sm tracking-wider uppercase text-white/60 mb-2">Telefon</div>
+                  <a href="tel:4443111" className="text-2xl font-light hover:text-white/80 transition-colors">
+                    444 3 111
+                  </a>
                 </div>
                 
-                <div>
-                  <p className="text-lg font-bold text-gray-900 mb-1">Adres</p>
-                  <div className='flex flex-col md:flex-row gap-6'>
-                    <div className="space-y-3 text-gray-700">
-                    <p>Kadıköy: Caferağa, Mühürdar Cd. No:50</p>
+                <div className="border-b border-white/20 pb-6">
+                  <div className="text-sm tracking-wider uppercase text-white/60 mb-4">Adresler</div>
+                  <div className='space-y-6'>
+                    <div>
+                    <p className="text-lg font-light mb-2">Kadıköy: Caferağa, Mühürdar Cd. No:50</p>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.6412183631014!2d29.02113847551287!3d40.989336520591856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9971b4336d7%3A0x212748610562a9a9!2zw5zDp8O8bmPDvCBCaW55xLFsIEFrYWRlbWkgS2FkxLFrw7Z5!5e0!3m2!1str!2str!4v1758981535919!5m2!1str!2str" 
                     width="100%" 
                     height="100%"
                     loading="lazy" ></iframe>
                     </div>
-                    <div className="space-y-3 text-gray-700">
-                    <p>Mecidiyeköy: Eski Osmanlı Sk. No:40 Kat:5</p>
+                    <div>
+                    <p className="text-lg font-light mb-2">Mecidiyeköy: Eski Osmanlı Sk. No:40 Kat:5</p>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.9911079377493!2d28.993269075517123!3d41.069187015672995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab6f800b7f05d%3A0xd23adc16fdbb8ed6!2zw5zDp8O8bmPDvCBCaW55xLFsIEFrYWRlbWkgTWVjaWRpeWVrw7Z5!5e0!3m2!1str!2str!4v1758982111350!5m2!1str!2str" 
                     width="100%" 
                     height="100%"
@@ -120,10 +131,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="p-12 bg-card">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">
-                İletişim Formu
-              </h3>
+            <div className="p-12 lg:p-20 bg-gray-900">
               {isSubmitted ? (
                 <div className="bg-white p-12 text-center shadow-lg">
                   <div className="flex flex-col items-center space-y-6">
@@ -169,8 +177,8 @@ export const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-0 py-4 bg-transparent border-0 border-b-2 focus:outline-none text-lg text-gray-900 placeholder-gray-500 ${
-                      errors.name ? 'border-red-500' : 'border-gray-300 focus:border-gray-900'
+                    className={`w-full px-0 py-4 bg-transparent border-0 border-b focus:outline-none text-lg text-white placeholder-white/40 ${
+                      errors.name ? 'border-red-500' : 'border-white/20 focus:border-white'
                     }`}
                     placeholder="Ad Soyad *"
                   />
@@ -184,8 +192,8 @@ export const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-0 py-4 bg-transparent border-0 border-b-2 focus:outline-none text-lg text-gray-900 placeholder-gray-500 ${
-                      errors.email ? 'border-red-500' : 'border-gray-300 focus:border-gray-900'
+                    className={`w-full px-0 py-4 bg-transparent border-0 border-b focus:outline-none text-lg text-white placeholder-white/40 ${
+                      errors.email ? 'border-red-500' : 'border-white/20 focus:border-white'
                     }`}
                     placeholder="E-posta *"
                   />
@@ -199,8 +207,8 @@ export const Contact = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full px-0 py-4 bg-transparent border-0 border-b-2 focus:outline-none text-lg text-gray-900 placeholder-gray-500 resize-none ${
-                      errors.message ? 'border-red-500' : 'border-gray-300 focus:border-gray-900'
+                    className={`w-full px-0 py-4 bg-transparent border-0 border-b focus:outline-none text-lg text-white placeholder-white/40 resize-none ${
+                      errors.message ? 'border-red-500' : 'border-white/20 focus:border-white'
                     }`}
                     placeholder="Mesajınız *"
                   ></textarea>
@@ -221,9 +229,9 @@ export const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gray-900 text-white py-4 px-8 text-lg font-medium hover:bg-gray-800 transition-colors duration-200 cursor-pointer"
+                  className="w-full bg-white text-gray-900 py-5 px-8 text-lg font-medium hover:bg-gray-100 transition-colors duration-300 tracking-wider uppercase"
                 >
-                  Gönder
+                  Mesaj Gönder
                 </button>
               </form>
               )}
