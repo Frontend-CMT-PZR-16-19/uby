@@ -1,12 +1,16 @@
 import { Hero } from "@/components/hero";
-import { Contact } from "@/components/Contact";
+import { FeaturedCourses } from "@/components/FeaturedCourses";
 import About from "@/components/About";
-export default function Home() {
+import { Testimonials } from "@/components/Testimonials";
+import { Contact } from "@/components/Contact";
 
+export default function Home() {
   return (
     <>
       <Hero />
+      <FeaturedCourses />
       <About />
+      <Testimonials />
       <Contact />
     </>
   );

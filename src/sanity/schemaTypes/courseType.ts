@@ -32,6 +32,62 @@ export const courseType = defineType({
       type: 'blockContent',
     }),
     defineField({
+      name: 'courseObjectives',
+      title: 'Kurs Amaçları ve Hedefleri',
+      type: 'array',
+      of: [{type: 'string'}],
+      description: 'Kursun amaç ve hedeflerini liste olarak ekleyin',
+    }),
+    defineField({
+      name: 'modules',
+      title: 'Eğitim Modülleri',
+      type: 'array',
+      of: [{
+        type: 'object',
+        fields: [
+          {
+            name: 'title',
+            title: 'Modül Başlığı',
+            type: 'string',
+          },
+          {
+            name: 'description',
+            title: 'Modül Açıklaması',
+            type: 'text',
+          },
+        ],
+      }],
+      description: 'Eğitim programı modüllerini ekleyin',
+    }),
+    defineField({
+      name: 'targetAudience',
+      title: 'Hedef Kitle',
+      type: 'array',
+      of: [{type: 'string'}],
+      description: 'Kurs kimler için uygundur? (liste olarak)',
+    }),
+    defineField({
+      name: 'materials',
+      title: 'Eğitim Materyalleri',
+      type: 'array',
+      of: [{type: 'string'}],
+      description: 'Eğitimde kullanılacak materyaller',
+    }),
+    defineField({
+      name: 'support',
+      title: 'Ek Destekler',
+      type: 'array',
+      of: [{type: 'string'}],
+      description: 'Eğitim sonrası verilen destekler',
+    }),
+    defineField({
+      name: 'certificationCriteria',
+      title: 'Sertifika Kriterleri',
+      type: 'array',
+      of: [{type: 'string'}],
+      description: 'Sertifika alma koşulları',
+    }),
+    defineField({
       name: 'image',
       title: 'Kurs Resmi',
       type: 'image',
