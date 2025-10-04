@@ -1,8 +1,13 @@
 "use client";
 
 import React from "react";
-import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
+
+const Footer = dynamic(() => import("@/components/Footer"), {
+    ssr: false,
+    loading: () => <div className="h-96"></div>
+});
 import { usePathname } from "next/navigation";
 import {
     Breadcrumb,
