@@ -22,44 +22,44 @@ export default function Footer() {
 
     const phone = "444 3 111";
     const email = "bilgi@ucuncubinyil.com";
-    const year = new Date().getFullYear();
+    const year = 2024;
 
     const navbarEducations: Education[] = [
         {
             title: "Makina",
-            href: "/makina",
+            href: "/kurslar/makine-egitimleri",
         },
         {
             title: "Yazılım",
-            href: "/yazilim"
+            href: "/kurslar/yazilim"
         },
         {
             title: "İnşaat",
-            href: "/insaat",
+            href: "/kurslar/insaat",
         },
         {
             title: "Mimari",
-            href: "/mimari",
+            href: "/kurslar/mimari",
         },
         {
             title: "Robotik Otomasyon ve PLC",
-            href: "/robotik",
+            href: "/kurslar/robotik-otomasyon-ve-plc",
         },
         {
             title: "İngilizce",
-            href: "/ingilizce",
+            href: "/kurslar/ingilizce",
         },
         {
             title: "Mesleki Bilişim",
-            href: "/meslekibilisim",
+            href: "/kurslar/mesleki-bilisim",
         },
         {
             title: "Grafik Video ve Web Tasarım",
-            href: "/grafik",
+            href: "/kurslar/grafik-video-ve-web-tasarim",
         },
         {
             title: "Dijital Oyun ve Animasyon",
-            href: "/oyunveanimasyon",
+            href: "/kurslar/dijital-oyun-ve-animasyon",
         },
     ]
 
@@ -80,8 +80,8 @@ export default function Footer() {
             href: "/",
         },
         {
-            title: "Eğitimlerimiz",
-            href: "/egitimlerimiz",
+            title: "Kurslar",
+            href: "/kurslar",
         },
         {
             title: "Etkinlikler",
