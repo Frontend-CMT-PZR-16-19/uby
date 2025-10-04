@@ -13,10 +13,7 @@ type NavLink = {
   subContent?: SubContent[];
 }
 
-
-
 export default function Navbar() {
-
 
   const NavLinks: NavLink[] = [
     {
@@ -46,12 +43,10 @@ export default function Navbar() {
       title: 'Etkinlikler',
       href: '/etkinlikler'
     },
-
     {
       title: 'Kampanyalar',
       href: '/kampanyalar'
     },
-
     {
       title: 'İletişim',
       href: '/iletisim'
@@ -64,36 +59,54 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
 
           <Link href="/" className="flex items-center gap-3">
-            <Logo fontSize={100}
-              className='cursor-pointer'
-            />
+            <Logo fontSize={100} className='cursor-pointer' />
           </Link>
+          
           <div className="flex">
             {NavLinks.map((item, idx) => (
               <div key={idx} className="hidden lg:flex items-center space-x-8 font-semibold">
                 <div className="relative group">
-                  <Link href={item.href} className={`text-gray-300 py-1 flex items-center gap-2 pl-4 pr-2 border-b-2 border-transparent  ${item.subContent ? "hover:bg-foreground/40 hover:text-white" : "hover:border-foreground"}`}>
-                    {item.title}
-                    {item.subContent && <svg className="w-4 h-4 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>}
+                  <Link
+                      href={item.href}
+                      className={`relative text-gray-300 py-1 flex items-center gap-2 pl-4 pr-2
+                        transition-all duration-300 group
+                        ${item.subContent 
+                          ? "hover:bg-foreground/40 hover:text-white" 
+                          : "hover:text-white"
+                        }`}
+                    >
+                      {!item.subContent && (
+                        <span
+                          className="absolute bottom-0 left-0 h-[2px] bg-primary/70 w-0 transition-all duration-300 group-hover:w-full"
+                        ></span>
+                      )}
+
+                      {item.title}
+
+                      {item.subContent && (
+                        <svg
+                          className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      )}
                   </Link>
-
                   {item.subContent && (
-                    <div className="absolute top-full left-0 w-64 bg-background opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-2 group-hover:translate-y-0 z-50">
-
-                      
-                        {item.subContent?.map((subItem, index) => (
-                          <Link
-                            key={index}
-                            href={subItem.href}
-                            className="block px-4 py-2 text-base  hover:text-white hover:bg-background text-gray-500 hover:bg-foreground/40"
-                          >
-                            {subItem.title}
-                          </Link>
-                        ))}
-                      </div>)
-                  }
+                    <div className="absolute top-full left-0 w-64 bg-background opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-50 shadow-lg  ">
+                      {item.subContent?.map((subItem, index) => (
+                        <Link
+                          key={index}
+                          href={subItem.href}
+                          className="block px-4 py-3 text-gray-400 hover:text-white hover:bg-primary/10 transition-colors duration-200 border-b border-gray-700 last:border-b-0"
+                        >
+                          {subItem.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
