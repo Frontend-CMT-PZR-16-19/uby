@@ -6,7 +6,6 @@ import { client } from '@/sanity/lib/client'
 import { PortableText, PortableTextComponents } from 'next-sanity'
 import { Clock, Users, ArrowLeft } from 'lucide-react'
 
-// Portable Text Components - Sanity'deki formatları düzgün render eder
 const portableTextComponents: PortableTextComponents = {
   block: {
     h1: ({ children }) => <h1 className="text-4xl font-bold mt-8 mb-4 text-gray-900">{children}</h1>,
