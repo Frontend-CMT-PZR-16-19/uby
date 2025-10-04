@@ -23,6 +23,19 @@ type EventCard = {
 
 const generateRandomDegree = () => Math.floor(Math.random() * (3 - (-2) + 1) + (-2));
 
+// Description'ı kısaltma fonksiyonu
+const truncateDescription = (text: string, maxLength: number = 150) => {
+  if (text.length <= maxLength) return text;
+  
+  // Son kelimeyi kesmemek için son boşluğu bul
+  const truncated = text.substring(0, maxLength);
+  const lastSpaceIndex = truncated.lastIndexOf(' ');
+  
+  return lastSpaceIndex > 0 
+    ? truncated.substring(0, lastSpaceIndex) + '...'
+    : truncated + '...';
+};
+
 const formatDateParts = (dateTime: string) => {
   const date = new Date(dateTime);
   // Ayları Türkçe olarak almak için
@@ -44,16 +57,35 @@ const formatHour = (dateTime: string) => {
 
 export default function EtkinliklerPage() {
   const [events, setEvents] = useState<EventCard[]>([]);
+  const [loading, setLoading] = useState(true); // Loading state ekledim
 
   const getEvents = async () => {
-    const response = await fetch("/api/event");
-    const data = await response.json();
-    setEvents(data?.data || []);
+    try {
+      const response = await fetch("/api/event");
+      const data = await response.json();
+      setEvents(data?.data || []);
+    } catch (error) {
+      console.error("Etkinlikler yüklenirken hata:", error);
+    } finally {
+      setLoading(false); // Yükleme tamamlandı
+    }
   };
 
   useEffect(() => {
     getEvents();
   }, []);
+
+  // Loading durumunda gösterilecek ekran
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <div className="text-lg text-gray-600">Etkinlikler yükleniyor...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -67,11 +99,14 @@ export default function EtkinliklerPage() {
             const imageUrl = typeof event.image === "string"
               ? event.image
               : event.image?.asset?.url || "/default.jpg";
+            
+            const shortDescription = truncateDescription(event.description, 150);
+            
             return (
               <div key={event._id}>
                 <Link
                   href={`/etkinlikler/${slug}`}
-                  className="group relative  transition-all duration-300 overflow-hidden"
+                  className="group relative transition-all duration-300 overflow-hidden"
                 >
                   <div className="flex flex-col lg:flex-row">
                     <div className="flex lg:flex-col items-center justify-center bg-gradient-to-br from-primary to-background text-white lg:w-32 lg:h-full min-h-[120px]">
@@ -85,12 +120,9 @@ export default function EtkinliklerPage() {
                     <div className="flex-1 pl-6">
                       <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                         <div className="flex-1">
-                          <div
-                            className="flex items-center gap-2 mb-3"
-                            style={{ transform: `rotate(${generateRandomDegree()}deg)` }}
-                          >
+                          <div className="flex items-center gap-2 mb-3">
                             {event.category && (
-                              <span className="px-3 bg-blue-100 text-blue-700 text-sm font-medium">
+                              <span className="px-3 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">
                                 {event.category}
                               </span>
                             )}
@@ -112,24 +144,32 @@ export default function EtkinliklerPage() {
                             )}
                           </div>
 
-                          <p className="text-slate-600 text-sm lg:text-base leading-relaxed mb-6">
-                            {event.description}
+                          <p className="text-slate-600 text-sm lg:text-base leading-relaxed mb-4">
+                            {shortDescription}
                           </p>
+                          
+                          {event.description.length > 150 && (
+                            <span className="text-blue-600 text-sm font-medium group-hover:underline">
+                              Devamını oku →
+                            </span>
+                          )}
                         </div>
-                        {event?.image && (<div className="lg:w-80 lg:h-48 h-48 relative  overflow-hidden bg-slate-200">
-                          <Image
-                            src={imageUrl}
-                            alt={event.title}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 320px"
-                          />
-                        </div>)}
+                        {event?.image && (
+                          <div className="lg:w-80 lg:h-48 h-48 relative overflow-hidden bg-slate-200 rounded-lg">
+                            <Image
+                              src={imageUrl}
+                              alt={event.title}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 320px"
+                            />
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
                 </Link>
-                <div className="h-[1px] bg-background/10 my-10" />
+                <div className="h-[1px] bg-slate-200 my-8" />
               </div>
             );
           })}

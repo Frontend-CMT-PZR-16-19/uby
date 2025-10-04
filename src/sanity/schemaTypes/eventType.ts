@@ -9,10 +9,12 @@ export const eventType = defineType({
     fields: [
         defineField({
             name: 'title',
+            title: 'Başlık',
             type: 'string',
         }),
         defineField({
             name: 'slug',
+            title: 'URL Slug',
             type: 'slug',
             options: {
                 source: 'title',
@@ -20,8 +22,17 @@ export const eventType = defineType({
         }),
         defineField({
             name: 'description',
+            title: 'Açıklama',
             type: 'text',
         }),
+       defineField({
+      name: 'image',
+      title: 'Kurs Resmi',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
         defineField({
             name: "startDateTime",
             title: "Başlangıç Tarihi ve Saati",
@@ -29,7 +40,6 @@ export const eventType = defineType({
             options: {
                 dateFormat: 'YYYY-MM-DD',
                 timeFormat: 'HH:mm',
-                calendarTodayLabel: 'Today'
             }
         }),
         defineField({
@@ -39,8 +49,17 @@ export const eventType = defineType({
             options: {
                 dateFormat: 'YYYY-MM-DD',
                 timeFormat: 'HH:mm',
-                calendarTodayLabel: 'Today'
             }
-        })
+        }),
+        defineField({
+            name: 'location',
+            title: 'Konum',
+            type: 'string',
+        }),
+        defineField({
+            name: 'category',
+            title: 'Kategori',
+            type: 'string',
+        }),
     ],
 })
