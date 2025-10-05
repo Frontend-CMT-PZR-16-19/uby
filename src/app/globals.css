@@ -3,6 +3,46 @@
 @import "tw-animate-css";
 @tailwind utilities;
 
+/* Masonry Grid Styles */
+.masonry-grid {
+  column-count: 1;
+  column-gap: 2rem;
+  column-fill: balance;
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Featured item spans two columns on larger screens */
+.masonry-item.featured {
+  break-inside: avoid;
+}
+
+@media (min-width: 1024px) {
+  .masonry-item.featured {
+    column-span: all;
+    max-width: 66.666667%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
