@@ -15,7 +15,11 @@ interface BlogPost {
   content?: any;
   author: {
     name: string;
-    image?: string;
+    image?: {
+      asset: {
+        url: string;
+      };
+    };
   };
   publishedAt: string;
   category: string;

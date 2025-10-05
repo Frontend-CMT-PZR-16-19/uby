@@ -14,7 +14,11 @@ interface BlogPost {
   excerpt: string;
   author: {
     name: string;
-    image?: string;
+    image?: {
+      asset: {
+        url: string;
+      };
+    };
   };
   publishedAt: string;
   category: string;
@@ -121,9 +125,29 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
           </p>
 
           <div className="flex items-center gap-8 mb-16 pb-8 border-b-2 border-gray-300">
-            <div className="flex items-center gap-3">
-              <User className="w-5 h-5 text-gray-500" />
-              <span className="text-gray-800 font-semibold uppercase tracking-wide text-sm" style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}>{post.author.name}</span>
+            <div className="flex items-center gap-4">
+              {post.author.image?.asset?.url ? (
+                <div className="w-12 h-12 relative overflow-hidden rounded-full border-2 border-gray-300">
+                  <Image
+                    src={post.author.image.asset.url}
+                    alt={post.author.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center border-2 border-gray-300">
+                  <User className="w-6 h-6 text-gray-500" />
+                </div>
+              )}
+              <div>
+                <div className="text-gray-800 font-semibold uppercase tracking-wide text-sm" style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}>
+                  {post.author.name}
+                </div>
+                <div className="text-gray-500 text-xs uppercase tracking-wide" style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}>
+                  Yazar
+                </div>
+              </div>
             </div>
             <div className="flex items-center gap-3">
               <Calendar className="w-5 h-5 text-gray-500" />

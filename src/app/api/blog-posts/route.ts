@@ -20,7 +20,11 @@ export async function GET(request: NextRequest) {
           content,
           author-> {
             name,
-            image
+            image {
+              asset-> {
+                url
+              }
+            }
           },
           publishedAt,
           category,
@@ -43,7 +47,11 @@ export async function GET(request: NextRequest) {
           content,
           author-> {
             name,
-            image
+            image {
+              asset-> {
+                url
+              }
+            }
           },
           publishedAt,
           category,
@@ -66,7 +74,11 @@ export async function GET(request: NextRequest) {
           content,
           author-> {
             name,
-            image
+            image {
+              asset-> {
+                url
+              }
+            }
           },
           publishedAt,
           category,

@@ -20,7 +20,11 @@ export async function GET(
         excerpt,
         author-> {
           name,
-          image
+          image {
+            asset-> {
+              url
+            }
+          }
         },
         publishedAt,
         category,
