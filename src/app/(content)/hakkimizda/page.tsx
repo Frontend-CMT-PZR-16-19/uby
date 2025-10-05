@@ -1,3 +1,9 @@
+import { Testimonials } from '@/components/Testimonials';
+
 export default function Hakkimizda() {
-  return <div>Hakkımızda Sayfası</div>;
+  return (
+    <div className="min-h-screen">
+      <Testimonials />
+    </div>
+  );
 }
