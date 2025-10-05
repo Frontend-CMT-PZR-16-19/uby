@@ -50,16 +50,16 @@ const portableTextComponents: PortableTextComponents = {
     image: ({ value }) => {
       if (!value?.asset) return null
       return (
-        <figure className="my-12">
+        <figure className="my-8 max-w-lg mx-auto">
           <Image
             src={value.asset.url}
             alt={value.alt || 'Kurs görseli'}
-            width={1200}
-            height={800}
-            className="w-full h-auto"
+            width={600}
+            height={400}
+            className="w-full h-auto rounded-sm shadow-sm"
           />
           {value.alt && (
-            <figcaption className="text-center text-sm text-gray-500 mt-4 tracking-wide">
+            <figcaption className="text-center text-xs text-gray-500 mt-3 tracking-wide italic">
               {value.alt}
             </figcaption>
           )}
@@ -170,12 +170,12 @@ export default async function KursDetayPage({ params }: PageProps) {
         <div className="grid lg:grid-cols-3 gap-16">
           <div className="lg:col-span-2">
             {course.image?.asset?.url && (
-              <div className="aspect-[4/3] w-full mb-12 overflow-hidden">
+              <div className="aspect-[3/2] w-full max-w-2xl mx-auto mb-12 overflow-hidden">
                 <Image
                   src={course.image.asset.url}
                   alt={course.title}
-                  width={1200}
-                  height={900}
+                  width={800}
+                  height={533}
                   className="w-full h-full object-cover"
                   priority
                 />
@@ -896,7 +896,7 @@ export default async function KursDetayPage({ params }: PageProps) {
                   className="group block"
                 >
                   {relatedCourse.image?.asset?.url && (
-                    <div className="aspect-[4/3] relative overflow-hidden mb-6">
+                    <div className="aspect-[3/2] relative overflow-hidden mb-6 max-w-sm mx-auto">
                       <Image
                         src={relatedCourse.image.asset.url}
                         alt={relatedCourse.title}
