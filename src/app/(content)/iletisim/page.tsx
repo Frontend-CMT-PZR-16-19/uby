@@ -1,6 +1,6 @@
 export default function Iletisim() {
-  return <div className="container mx-auto py-24 space-y-4" >
-    <div className="max-w-md">
+  return <div className="container mx-auto py-24" >
+    <div className="max-w-md space-y-6">
       <h1 className="text-4xl">
         İletişim Bilgileri
       </h1>

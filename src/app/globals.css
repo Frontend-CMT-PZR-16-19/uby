@@ -3,7 +3,6 @@
 @import "tw-animate-css";
 @tailwind utilities;
 
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

@@ -32,12 +32,8 @@ export default function Navbar() {
       ]
     },
     {
-      title: "Blog",
-      href: "/href",
-      subContent: [
-        { title: "Haberler", href: "/haberler" },
-        { title: "Blog", href: "/blog" },
-      ]
+      title: "Blog & Haberler",
+      href: "/blog-haberler",
     },
     {
       title: 'Etkinlikler',
