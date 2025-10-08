@@ -1,14 +1,17 @@
-import { BlogAndNews } from "./BlogAndNews";
+import BlogAndNews from "./BlogAndNews";
 import { Events } from "./Events";
 
-export default function app(){
+export default function BlogAndNewsAndEvents(){
     return(
-        <div className="flex flex-col md:flex-row container mx-auto gap-4">
-            <div className="flex-3 bg-green-400 py-12">
-            <BlogAndNews />
-            </div>
-            <div className="flex-1 bg-red-400 py-12">
-            <Events />
+        <div className="container mx-auto py-16">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="lg:col-span-2">
+                    <BlogAndNews />
+                </div>
+                
+                <div className="lg:col-span-1">
+                    <Events />
+                </div>
             </div>
         </div>
     )
